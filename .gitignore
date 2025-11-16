@@ -28,6 +28,6 @@ go.work.sum
 .env
 
 # Editor/IDE
-# .idea/
-
-decentralized-blog-roadmap.md .vscode/
+.idea/
+.vscode/
+decentralized-blog-roadmap.md
