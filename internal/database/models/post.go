@@ -10,7 +10,3 @@ type Post struct {
 	Content    string `gorm:"not null"`
 	Published  bool   `gorm:"not null"`
 }
-
-func (p Post) TableName() string {
-	return "posts"
-}

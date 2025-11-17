@@ -3,6 +3,7 @@ package database
 import (
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
+    "github.com/Defl8/pasture/internal/models/model.go"
 )
 
 // Wraps gorm.DB for custom implemenation
@@ -40,6 +41,6 @@ func (ld *LocalDatabase) Close() error {
 }
 
 
-func (ld *LocalDatabase) AutoMigrate(models ...any) {
+func (ld *LocalDatabase) AutoMigrate(models ...Model) {
 	ld.DB.AutoMigrate(models...)
 }
