@@ -6,3 +6,7 @@ type Profile struct {
 	Bio       string `gorm:"not null"`
 	AvatarURL string
 }
+
+func (Profile) TableName() string {
+	return "profile"
+}
