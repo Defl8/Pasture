@@ -19,3 +19,22 @@ func (ld *LocalDatabase) Connect() error {
 	ld.DB = db
 	return nil
 }
+
+func NewLocalDatabase(name string) (*LocalDatabase, error) {
+	ld := &LocalDatabase{Name: name}
+
+	// Initialize the connection on struct creation
+	if err := ld.Connect(); err != nil {
+		return nil, err
+	}
+
+	return ld, nil
+}
+
+func (ld *LocalDatabase) Close() error {
+	sqlDB, err := ld.DB.DB()
+	if err != nil {
+		return err
+	}
+	return sqlDB.Close()
+}
