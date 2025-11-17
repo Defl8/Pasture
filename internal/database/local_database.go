@@ -75,10 +75,25 @@ func (ld *LocalDatabase) Delete(model dbModels.Model) error {
 	return ld.DB.Delete(model).Error
 }
 
+func (ld *LocalDatabase) getModel(model dbModels.Model, id ...uint) error {
+	if len(id) > 0 {
+		return ld.DB.First(model, id[0]).Error
+	}
+	return ld.DB.First(model).Error
+}
+
 func (ld *LocalDatabase) GetPostByID(id uint) (*dbModels.Post, error) {
 	var post dbModels.Post
-	if err := ld.DB.First(&post, id).Error; err != nil {
+	if err := ld.getModel(&post, id); err != nil {
 		return nil, err
 	}
 	return &post, nil
+}
+
+func (ld *LocalDatabase) GetProfile() (*dbModels.Profile, error) {
+	var profile dbModels.Profile
+	if err := ld.getModel(&profile); err != nil {
+		return nil, err
+	}
+	return &profile, nil
 }
