@@ -38,3 +38,8 @@ func (ld *LocalDatabase) Close() error {
 	}
 	return sqlDB.Close()
 }
+
+
+func (ld *LocalDatabase) AutoMigrate(models ...any) {
+	ld.DB.AutoMigrate(models...)
+}
