@@ -18,8 +18,8 @@ Start here! This is enough for a solid resume project.
 ### Week 1: Basic Blog (Core Features)
 **What you're building:** A simple personal blog that works locally.
 
-- [ ] Set up Go project with basic structure
-- [ ] Create SQLite database (super simple, no install needed)
+- [x] ~~Set up Go project with basic structure~~
+- [x] ~~Create SQLite database (super simple, no install needed)~~
 - [ ] Make a homepage that lists blog posts
 - [ ] Build "Create Post" page with a form
 - [ ] Build "View Post" page to read a single post
